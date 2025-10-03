@@ -16,7 +16,9 @@
 //});
 
 use Illuminate\Support\Facades\Route;
-use Module\Core\Http\Controllers\WebsiteController;
+use Modules\Core\Http\Controllers\WebsiteController;
+
+
 
 
 

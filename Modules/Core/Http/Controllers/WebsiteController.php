@@ -1,6 +1,6 @@
 <?php
 
-namespace Module\Core\Http\Controllers;
+namespace Modules\Core\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event;
@@ -50,7 +50,7 @@ class WebsiteController extends Controller
     {
         $events = Event::where('past', false)->get();
         $past_events = Event::where('past', true)->get();
-        return view('events.index')->with([
+        return view('core::events.index')->with([
             'events' => $events,
             'past_events' => $past_events
         ]);
