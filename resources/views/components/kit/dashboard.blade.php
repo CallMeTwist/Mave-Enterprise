@@ -30,7 +30,7 @@
 </head>
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-light bg-whitesmoke">
-        <a class="navbar-brand text-center pt-4" href="{{ route('panel.dashboard') }}">
+        <a class="navbar-brand text-center pt-4" href="{{ route('admin.dashboard.home') }}">
             <img src="{{ asset('assets/img/logo/favicon.png') }}" class="w-50" />
         </a>
         <div class="d-flex align-items-center justify-content-between">
@@ -39,9 +39,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('panel.settings.profile.manage') }}">Settings</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.dashboard.settings.manage') }}">Settings</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="{{ route('panel.logout') }}">Logout</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.logout') }}">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -53,47 +53,47 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Home</div>
-                        <a class="nav-link {{ request()->is('panel/dashboard') ? 'active' : '' }}" href="{{ route('panel.dashboard') }}">
+                        <a class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard.home') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt m-r-10"></i></div>
                             Dashboard
                         </a>
 
-                        <a class="nav-link collapsed {{ request()->is('panel/dashboard/settings/*') ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSettings"
-                           aria-expanded="{{ request()->is('panel/dashboard/settings/*') ? 'true' : 'false' }}" aria-controls="collapseRealtors">
+                        <a class="nav-link collapsed {{ request()->is('admin/dashboard/settings/*') ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSettings"
+                           aria-expanded="{{ request()->is('admin/dashboard/settings/*') ? 'true' : 'false' }}" aria-controls="collapseRealtors">
                             <div class="sb-nav-link-icon"><i class="fas fa-cogs m-r-10"></i></div>
                             System Settings
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse {{ request()->is('panel/dashboard/settings/*') ? 'show' : '' }}" id="collapseSettings" aria-labelledby="System Settings" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse {{ request()->is('admin/dashboard/settings/*') ? 'show' : '' }}" id="collapseSettings" aria-labelledby="System Settings" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link {{ request()->is('panel/dashboard/settings/profile') ? 'active' : '' }}" href="{{ route('panel.settings.profile.manage') }}">
+                                <a class="nav-link {{ request()->is('admin/dashboard/settings/profile') ? 'active' : '' }}" href="{{ route('admin.dashboard.settings.profile.manage') }}">
                                     <i class="fa fa-user-cog m-r-10"></i> Account Settings</a>
-                                <a class="nav-link {{ request()->is('panel/dashboard/settings/manage') ? 'active' : '' }}" href="{{ route('panel.settings.manage') }}">
+                                <a class="nav-link {{ request()->is('panel/dashboard/settings/manage') ? 'active' : '' }}" href="{{ route('admin.dashboard.settings.manage') }}">
                                     <i class="fa fa-cogs m-r-10"></i> System Settings</a>
                             </nav>
                         </div>
 
-                        <a class="nav-link {{ request()->is('panel/dashboard/website/testimonials') ? 'active' : '' }}" href="{{ route('panel.testimonials.manage') }}">
+                        <a class="nav-link {{ request()->is('admin/dashboard/website/testimonials') ? 'active' : '' }}" href="{{ route('admin.dashboard.testimonials.manage') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-comment-dots m-r-10"></i></div>
                             Testimonials
                         </a>
-                        <a class="nav-link {{ request()->is('panel/dashboard/website/faqs') ? 'active' : '' }}" href="{{ route('panel.faqs.manage') }}">
+                        <a class="nav-link {{ request()->is('admin/dashboard/website/faqs') ? 'active' : '' }}" href="{{ route('admin.dashboard.faqs.manage') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-question-circle m-r-10"></i></div>
                             FAQs
                         </a>
-                        <a class="nav-link {{ request()->is('panel/dashboard/website/team') ? 'active' : '' }}" href="{{ route('panel.team.manage') }}">
+                        <a class="nav-link {{ request()->is('admin/dashboard/website/team') ? 'active' : '' }}" href="{{ route('admin.dashboard.team.manage') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-users-cog m-r-10"></i></div>
                             Team Members
                         </a>
-                        <a class="nav-link {{ request()->is('panel/dashboard/website/projects') ? 'active' : '' }}" href="{{ route('panel.projects.manage') }}">
+                        <a class="nav-link {{ request()->is('admin/dashboard/website/projects') ? 'active' : '' }}" href="{{ route('admin.dashboard.projects.manage') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-road m-r-10"></i></div>
                             Projects
                         </a>
-                        <a class="nav-link {{ request()->is('panel/dashboard/website/events') ? 'active' : '' }}" href="{{ route('panel.events.manage') }}">
+                        <a class="nav-link {{ request()->is('admin/dashboard/website/events') ? 'active' : '' }}" href="{{ route('admin.dashboard.events.manage') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-calendar-check m-r-10"></i></div>
                             Events
                         </a>
-                        <a class="nav-link {{ request()->is('panel/dashboard/website/gallery') ? 'active' : '' }}" href="{{ route('panel.galleries.manage') }}">
+                        <a class="nav-link {{ request()->is('admin/dashboard/website/gallery') ? 'active' : '' }}" href="{{ route('admin.dashboard.galleries.manage') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-photo-film m-r-10"></i></div>
                             Galleries
                         </a>
@@ -110,7 +110,7 @@
                 <div class="container-fluid px-4 pb-4">
                     <h1 class="mt-4">{{ $title ?? 'Dashboard'}}</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="{{ route('panel.dashboard') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.home') }}">Dashboard</a></li>
                         {!! $breadcrumb ?? '' !!}
                     </ol>
 
@@ -126,7 +126,7 @@
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Copyright &copy; {{ config('app.name') }} {{ date('Y') }}</div>
                         <span class="text-muted text-uppercase">Gizmo v3.5.6</span>
-                        <p class="mb-0">A product of <a href="https://thepragmaticapproach.com" target="_blank" class="col-red">The Pragmatic Approach</a></p>
+                        <p class="mb-0">A product of <a href="https://thepragmaticapproach.com" target="_blank" class="col-red">Deved Solutions</a></p>
                     </div>
                 </div>
             </footer>
